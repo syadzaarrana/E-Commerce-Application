@@ -32,6 +32,27 @@ public class AddressServiceImpl implements AddressService {
 	private ModelMapper modelMapper;
 
 	@Override
+	public Address findOrCreateAddress(CreateAddressDTO addressDTO) {
+		String country = addressDTO.getCountry();
+		String state = addressDTO.getState();
+		String city = addressDTO.getCity();
+		String pincode = addressDTO.getPincode();
+		String street = addressDTO.getStreet();
+		String buildingName = addressDTO.getBuildingName();
+
+		Address addressFromDB = addressRepo.findByCountryAndStateAndCityAndPincodeAndStreetAndBuildingName(country,
+				state, city, pincode, street, buildingName);
+
+		if (addressFromDB != null) {
+			return addressFromDB;
+		}
+
+		Address address = modelMapper.map(addressDTO, Address.class);
+
+		return addressRepo.save(address);
+	}
+
+	@Override
 	public AddressDTO createAddress(CreateAddressDTO createAddressDTO) {
 
 		String country = createAddressDTO.getCountry();

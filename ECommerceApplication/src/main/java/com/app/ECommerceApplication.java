@@ -10,7 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import com.app.config.AppConstants;
+import com.app.entites.Payment;
 import com.app.entites.Role;
+import com.app.repositories.PaymentRepo;
 import com.app.repositories.RoleRepo;
 
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeIn;
@@ -23,6 +25,9 @@ public class ECommerceApplication implements CommandLineRunner {
 
 	@Autowired
 	private RoleRepo roleRepo;
+
+	@Autowired
+	private PaymentRepo paymentRepo;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ECommerceApplication.class, args);
@@ -49,6 +54,13 @@ public class ECommerceApplication implements CommandLineRunner {
 			List<Role> savedRoles = roleRepo.saveAll(roles);
 
 			savedRoles.forEach(System.out::println);
+
+			Payment codPayment = new Payment();
+			codPayment.setPaymentId(AppConstants.PAYMENT_COD_ID);
+			codPayment.setPaymentMethod("Cash On Delivery");
+
+			Payment savedCodPayment = paymentRepo.save(codPayment);
+			System.out.println(savedCodPayment);
 
 		} catch (Exception e) {
 			e.printStackTrace();

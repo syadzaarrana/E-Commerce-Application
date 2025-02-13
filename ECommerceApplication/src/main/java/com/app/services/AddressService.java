@@ -7,6 +7,8 @@ import com.app.payloads.AddressDTO;
 import com.app.payloads.CreateAddressDTO;
 
 public interface AddressService {
+
+	Address findOrCreateAddress(CreateAddressDTO addressDTO);
 	
 	AddressDTO createAddress(CreateAddressDTO createAddressDTO);
 	

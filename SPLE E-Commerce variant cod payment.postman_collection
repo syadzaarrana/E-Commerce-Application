@@ -1,0 +1,1297 @@
+{
+	"info": {
+		"_postman_id": "99ecd16d-db72-4850-b122-dccb6e7ae83f",
+		"name": "SPLE E-Commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22021249"
+	},
+	"item": [
+		{
+			"name": "Address",
+			"item": [
+				{
+					"name": "Address List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/admin/addresses",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Address by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/admin/addresses/:addressId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"addresses",
+								":addressId"
+							],
+							"variable": [
+								{
+									"key": "addressId",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/admin/addresses/:addressId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"addresses",
+								":addressId"
+							],
+							"variable": [
+								{
+									"key": "addressId",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"street\": \"101 Riverdale St\",\r\n    \"buildingName\": \"Blue Horizon\",\r\n    \"city\": \"Miami\",\r\n    \"state\": \"FL\",\r\n    \"country\": \"USA\",\r\n    \"pincode\": \"331011\",\r\n    \"users\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/admin/addresses/:addressId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"addresses",
+								":addressId"
+							],
+							"variable": [
+								{
+									"key": "addressId",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"street\": \"101 Riverdale St\",\r\n    \"buildingName\": \"Blue Horizon\",\r\n    \"city\": \"Miami\",\r\n    \"state\": \"FL\",\r\n    \"country\": \"USA\",\r\n    \"pincode\": \"331001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/admin/address",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"address"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Category List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/public/categories",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/admin/categories/:categoryId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"categories",
+								":categoryId"
+							],
+							"variable": [
+								{
+									"key": "categoryId",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryId\": 0,\r\n    \"categoryName\": \"Electronics 2\",\r\n    \"products\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/admin/categories/:categoryId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"categories",
+								":categoryId"
+							],
+							"variable": [
+								{
+									"key": "categoryId",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryId\": 0,\r\n    \"categoryName\": \"Electronics\",\r\n    \"products\": []\r\n}\r\n\r\n// {\r\n//     \"categoryId\": 0,\r\n//     \"categoryName\": \"Home Appliances\",\r\n//     \"products\": []\r\n// }\r\n\r\n// {\r\n//     \"categoryId\": 0,\r\n//     \"categoryName\": \"Clothing\",\r\n//     \"products\": []\r\n// }\r\n\r\n// {\r\n//     \"categoryId\": 0,\r\n//     \"categoryName\": \"Books\",\r\n//     \"products\": []\r\n// }\r\n\r\n// {\r\n//     \"categoryId\": 0,\r\n//     \"categoryName\": \"Sports & Fitness\",\r\n//     \"products\": []\r\n// }\r\n\r\n// {\r\n//     \"categoryId\": 0,\r\n//     \"categoryName\": \"Beauty & Personal Care\",\r\n//     \"products\": []\r\n// }\r\n\r\n// {\r\n//     \"categoryId\": 0,\r\n//     \"categoryName\": \"Toys & Games\",\r\n//     \"products\": []\r\n// }\r\n\r\n// {\r\n//     \"categoryId\": 0,\r\n//     \"categoryName\": \"Automotive\",\r\n//     \"products\": []\r\n// }\r\n\r\n// {\r\n//     \"categoryId\": 0,\r\n//     \"categoryName\": \"Furniture\",\r\n//     \"products\": []\r\n// }\r\n\r\n// {\r\n//     \"categoryId\": 0,\r\n//     \"categoryName\": \"Groceries\",\r\n//     \"products\": []\r\n// }\r\n\r\n// {\r\n//     \"categoryId\": 0,\r\n//     \"categoryName\": \"Pet Supplies\",\r\n//     \"products\": []\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/admin/category",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Cart List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/admin/carts",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/public/users/:email/carts/:cartId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"users",
+								":email",
+								"carts",
+								":cartId"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "alexander.brown@example.com"
+								},
+								{
+									"key": "cartId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cart Item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/public/carts/:cartId/product/:productId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"carts",
+								":cartId",
+								"product",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "cartId",
+									"value": "3"
+								},
+								{
+									"key": "productId",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add to Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/public/carts/:cartId/products/:productId/quantity/:quantity",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"carts",
+								":cartId",
+								"products",
+								":productId",
+								"quantity",
+								":quantity"
+							],
+							"variable": [
+								{
+									"key": "cartId",
+									"value": "3"
+								},
+								{
+									"key": "productId",
+									"value": "11"
+								},
+								{
+									"key": "quantity",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Cart Item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/public/carts/:cartId/products/:productId/quantity/:quantity",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"carts",
+								":cartId",
+								"products",
+								":productId",
+								"quantity",
+								":quantity"
+							],
+							"variable": [
+								{
+									"key": "cartId",
+									"value": "3"
+								},
+								{
+									"key": "productId",
+									"value": "11"
+								},
+								{
+									"key": "quantity",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Order List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/admin/orders",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/public/users/:email/orders",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"users",
+								":email",
+								"orders"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "alexander.brown@example.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/public/users/:email/orders/:orderId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"users",
+								":email",
+								"orders",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "alexander.brown@example.com"
+								},
+								{
+									"key": "orderId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"street\": \"456 Oak Avenue\",\r\n//     \"buildingName\": \"Greenwood Towers\",\r\n//     \"city\": \"Los Angeles\",\r\n//     \"state\": \"CA\",\r\n//     \"country\": \"USA\",\r\n//     \"pincode\": \"900001\"\r\n// }\r\n\r\n// {\r\n//     \"street\": \"789 Maple Lane\",\r\n//     \"buildingName\": \"Sunset Villas\",\r\n//     \"city\": \"Chicago\",\r\n//     \"state\": \"IL\",\r\n//     \"country\": \"USA\",\r\n//     \"pincode\": \"606001\"\r\n// }\r\n\r\n{\r\n    \"street\": \"159 Birch Road\",\r\n    \"buildingName\": \"Skyline Heights\",\r\n    \"city\": \"Houston\",\r\n    \"state\": \"TX\",\r\n    \"country\": \"USA\",\r\n    \"pincode\": \"770002\"\r\n}\r\n\r\n// {\r\n//     \"street\": \"753 Cedar Street\",\r\n//     \"buildingName\": \"Downtown Residences\",\r\n//     \"city\": \"Phoenix\",\r\n//     \"state\": \"AZ\",\r\n//     \"country\": \"USA\",\r\n//     \"pincode\": \"850003\"\r\n// }\r\n\r\n// {\r\n//     \"street\": \"852 Pine Avenue\",\r\n//     \"buildingName\": \"Royal Estates\",\r\n//     \"city\": \"San Diego\",\r\n//     \"state\": \"CA\",\r\n//     \"country\": \"USA\",\r\n//     \"pincode\": \"921004\"\r\n// }\r\n\r\n// {\r\n//     \"street\": \"963 Redwood Blvd\",\r\n//     \"buildingName\": \"Horizon Towers\",\r\n//     \"city\": \"Dallas\",\r\n//     \"state\": \"TX\",\r\n//     \"country\": \"USA\",\r\n//     \"pincode\": \"752005\"\r\n// }\r\n\r\n// {\r\n//     \"street\": \"147 Spruce Drive\",\r\n//     \"buildingName\": \"Summit Apartments\",\r\n//     \"city\": \"San Antonio\",\r\n//     \"state\": \"TX\",\r\n//     \"country\": \"USA\",\r\n//     \"pincode\": \"782006\"\r\n// }\r\n\r\n// {\r\n//     \"street\": \"369 Palm Lane\",\r\n//     \"buildingName\": \"Ocean View\",\r\n//     \"city\": \"San Francisco\",\r\n//     \"state\": \"CA\",\r\n//     \"country\": \"USA\",\r\n//     \"pincode\": \"941007\"\r\n// }\r\n\r\n// {\r\n//     \"street\": \"951 Cherry Road\",\r\n//     \"buildingName\": \"Grand Residences\",\r\n//     \"city\": \"Seattle\",\r\n//     \"state\": \"WA\",\r\n//     \"country\": \"USA\",\r\n//     \"pincode\": \"981008\"\r\n// }\r\n\r\n// {\r\n//     \"street\": \"258 Willow Way\",\r\n//     \"buildingName\": \"Parkside Villas\",\r\n//     \"city\": \"Denver\",\r\n//     \"state\": \"CO\",\r\n//     \"country\": \"USA\",\r\n//     \"pincode\": \"802009\"\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/public/users/:email/carts/:cartId/order",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"users",
+								":email",
+								"carts",
+								":cartId",
+								"order"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "alexander.brown@example.com"
+								},
+								{
+									"key": "cartId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Order Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/admin/users/:email/orders/:orderId/orderStatus/:orderStatus",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"users",
+								":email",
+								"orders",
+								":orderId",
+								"orderStatus",
+								":orderStatus"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "alexander.brown@example.com"
+								},
+								{
+									"key": "orderId",
+									"value": "3"
+								},
+								{
+									"key": "orderStatus",
+									"value": "Order Shipped!"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Product List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/public/products",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Search",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/public/products/keyword/:keyword",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"products",
+								"keyword",
+								":keyword"
+							],
+							"variable": [
+								{
+									"key": "keyword",
+									"value": "Blender"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Category Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/public/categories/:categoryId/products",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"categories",
+								":categoryId",
+								"products"
+							],
+							"variable": [
+								{
+									"key": "categoryId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// categoryId 1\r\n\r\n{\r\n    \"productName\": \"Smart Blender\",\r\n    \"description\": \"High-speed blender with multiple preset modes\",\r\n    \"quantity\": 18,\r\n    \"price\": 275000,\r\n    \"discount\": 6\r\n}\r\n\r\n// {\r\n//     \"productName\": \"Vacuum Cleaner\",\r\n//     \"description\": \"Powerful cordless vacuum cleaner\",\r\n//     \"quantity\": 10,\r\n//     \"price\": 399000,\r\n//     \"discount\": 8\r\n// }\r\n\r\n// {\r\n//     \"productName\": \"Air Fryer\",\r\n//     \"description\": \"Oil-free air fryer with multiple cooking modes\",\r\n//     \"quantity\": 12,\r\n//     \"price\": 250000,\r\n//     \"discount\": 5\r\n// }\r\n\r\n// categoryId 2\r\n\r\n// {\r\n//     \"productName\": \"Denim Jacket\",\r\n//     \"description\": \"Classic blue denim jacket with slim fit\",\r\n//     \"quantity\": 25,\r\n//     \"price\": 120000,\r\n//     \"discount\": 15\r\n// }\r\n\r\n// {\r\n//     \"productName\": \"Running Shoes\",\r\n//     \"description\": \"Lightweight and comfortable running shoes\",\r\n//     \"quantity\": 30,\r\n//     \"price\": 180000,\r\n//     \"discount\": 12\r\n// }\r\n\r\n// categoryId 3\r\n\r\n// {\r\n//     \"productName\": \"Fiction Novel\",\r\n//     \"description\": \"Bestselling mystery thriller novel\",\r\n//     \"quantity\": 50,\r\n//     \"price\": 75000,\r\n//     \"discount\": 10\r\n// }\r\n\r\n// {\r\n//     \"productName\": \"Cookbook\",\r\n//     \"description\": \"Healthy recipes for everyday cooking\",\r\n//     \"quantity\": 40,\r\n//     \"price\": 95000,\r\n//     \"discount\": 5\r\n// }\r\n\r\n// categoryId 4\r\n\r\n// {\r\n//     \"productName\": \"Dumbbell Set\",\r\n//     \"description\": \"Adjustable weight dumbbells for home workouts\",\r\n//     \"quantity\": 15,\r\n//     \"price\": 350000,\r\n//     \"discount\": 7\r\n// }\r\n\r\n// {\r\n//     \"productName\": \"Yoga Mat\",\r\n//     \"description\": \"Eco-friendly non-slip yoga mat\",\r\n//     \"quantity\": 20,\r\n//     \"price\": 99000,\r\n//     \"discount\": 5\r\n// }\r\n\r\n// categoryId 5\r\n\r\n// {\r\n//     \"productName\": \"Face Serum\",\r\n//     \"description\": \"Hydrating and anti-aging face serum\",\r\n//     \"quantity\": 35,\r\n//     \"price\": 150000,\r\n//     \"discount\": 10\r\n// }\r\n\r\n// {\r\n//     \"productName\": \"Shampoo Set\",\r\n//     \"description\": \"Sulfate-free moisturizing shampoo and conditioner\",\r\n//     \"quantity\": 40,\r\n//     \"price\": 120000,\r\n//     \"discount\": 8\r\n// }\r\n\r\n// categoryId 6\r\n\r\n// {\r\n//     \"productName\": \"Board Game\",\r\n//     \"description\": \"Classic strategy board game for families\",\r\n//     \"quantity\": 25,\r\n//     \"price\": 89000,\r\n//     \"discount\": 5\r\n// }\r\n\r\n// {\r\n//     \"productName\": \"Lego Set\",\r\n//     \"description\": \"Creative building blocks set for kids\",\r\n//     \"quantity\": 20,\r\n//     \"price\": 250000,\r\n//     \"discount\": 10\r\n// }\r\n\r\n// categoryId 7\r\n\r\n// {\r\n//     \"productName\": \"Car Phone Holder\",\r\n//     \"description\": \"Magnetic car mount for smartphones\",\r\n//     \"quantity\": 30,\r\n//     \"price\": 50000,\r\n//     \"discount\": 10\r\n// }\r\n\r\n// {\r\n//     \"productName\": \"Car Vacuum Cleaner\",\r\n//     \"description\": \"Portable car vacuum cleaner with powerful suction\",\r\n//     \"quantity\": 20,\r\n//     \"price\": 120000,\r\n//     \"discount\": 5\r\n// }\r\n\r\n// categoryId 8\r\n\r\n// {\r\n//     \"productName\": \"Office Chair\",\r\n//     \"description\": \"Ergonomic office chair with lumbar support\",\r\n//     \"quantity\": 15,\r\n//     \"price\": 450000,\r\n//     \"discount\": 12\r\n// }\r\n\r\n// {\r\n//     \"productName\": \"Wooden Coffee Table\",\r\n//     \"description\": \"Minimalist design solid wood coffee table\",\r\n//     \"quantity\": 10,\r\n//     \"price\": 320000,\r\n//     \"discount\": 8\r\n// }\r\n\r\n// categoryId 9\r\n\r\n// {\r\n//     \"productName\": \"Organic Coffee Beans\",\r\n//     \"description\": \"100% Arabica whole bean coffee\",\r\n//     \"quantity\": 50,\r\n//     \"price\": 80000,\r\n//     \"discount\": 5\r\n// }\r\n\r\n// {\r\n//     \"productName\": \"Granola Bars\",\r\n//     \"description\": \"Healthy snack bars with nuts and berries\",\r\n//     \"quantity\": 60,\r\n//     \"price\": 45000,\r\n//     \"discount\": 7\r\n// }\r\n\r\n// categoryId 10\r\n\r\n// {\r\n//     \"productName\": \"Dog Bed\",\r\n//     \"description\": \"Soft and durable pet bed for dogs\",\r\n//     \"quantity\": 20,\r\n//     \"price\": 130000,\r\n//     \"discount\": 10\r\n// }\r\n\r\n// {\r\n//     \"productName\": \"Cat Scratching Post\",\r\n//     \"description\": \"Multi-level cat tree with scratching posts\",\r\n//     \"quantity\": 15,\r\n//     \"price\": 220000,\r\n//     \"discount\": 12\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/admin/categories/:categoryId/product",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"categories",
+								":categoryId",
+								"product"
+							],
+							"variable": [
+								{
+									"key": "categoryId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\": \"Smart Blender 2\",\r\n    \"description\": \"High-speed blender with multiple preset modes\",\r\n    \"quantity\": 18,\r\n    \"price\": 285000,\r\n    \"discount\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/admin/products/:productId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "52"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/admin/products/:productId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "52"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Product Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/syadz/Downloads/smart blender.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/admin/products/:productId/image",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"products",
+								":productId",
+								"image"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "52"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/admin/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/public/users/:userId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/admin/users/:userId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 0,\r\n    \"firstName\": \"Jonathan\",\r\n    \"lastName\": \"Williams\",\r\n    \"mobileNumber\": \"9876543211\",\r\n    \"email\": \"jonathan.williams@example.com\",\r\n    \"password\": \"SecurePass123!\",\r\n    \"roles\": [\r\n        {\r\n            \"roleId\": 101,\r\n            \"roleName\": \"ADMIN\"\r\n        }\r\n    ],\r\n    \"address\": {\r\n        \"addressId\": 0,\r\n        \"street\": \"123 Elm Street\",\r\n        \"buildingName\": \"Sunrise Apartments\",\r\n        \"city\": \"New York\",\r\n        \"state\": \"NY\",\r\n        \"country\": \"USA\",\r\n        \"pincode\": \"100001\"\r\n    },\r\n    \"cart\": {\r\n        \"cartId\": 0,\r\n        \"totalPrice\": 0,\r\n        \"products\": []\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/public/users/:userId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.environment.set(\"jwt_token\", jsonData[\"jwt-token\"]);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 0,\r\n    \"firstName\": \"Jonathan\",\r\n    \"lastName\": \"Williams\",\r\n    \"mobileNumber\": \"9876543210\",\r\n    \"email\": \"jonathan.williams@example.com\",\r\n    \"password\": \"SecurePass123!\",\r\n    \"roles\": [\r\n        {\r\n            \"roleId\": 101,\r\n            \"roleName\": \"ADMIN\"\r\n        }\r\n    ],\r\n    \"address\": {\r\n        \"addressId\": 0,\r\n        \"street\": \"123 Elm Street\",\r\n        \"buildingName\": \"Sunrise Apartments\",\r\n        \"city\": \"New York\",\r\n        \"state\": \"NY\",\r\n        \"country\": \"USA\",\r\n        \"pincode\": \"100001\"\r\n    },\r\n    \"cart\": {\r\n        \"cartId\": 0,\r\n        \"totalPrice\": 0,\r\n        \"products\": []\r\n    }\r\n}\r\n\r\n// {\r\n//     \"userId\": 0,\r\n//     \"firstName\": \"Michael\",\r\n//     \"lastName\": \"Anderson\",\r\n//     \"mobileNumber\": \"9123456789\",\r\n//     \"email\": \"michael.anderson@example.com\",\r\n//     \"password\": \"Pass123!@#\",\r\n//     \"roles\": [\r\n//         {\r\n//             \"roleId\": 101,\r\n//             \"roleName\": \"ADMIN\"\r\n//         }\r\n//     ],\r\n//     \"address\": {\r\n//         \"addressId\": 0,\r\n//         \"street\": \"456 Oak Avenue\",\r\n//         \"buildingName\": \"Greenwood Towers\",\r\n//         \"city\": \"Los Angeles\",\r\n//         \"state\": \"CA\",\r\n//         \"country\": \"USA\",\r\n//         \"pincode\": \"900001\"\r\n//     },\r\n//     \"cart\": {\r\n//         \"cartId\": 0,\r\n//         \"totalPrice\": 0,\r\n//         \"products\": []\r\n//     }\r\n// }\r\n\r\n// {\r\n//     \"userId\": 0,\r\n//     \"firstName\": \"Sophia\",\r\n//     \"lastName\": \"Martinez\",\r\n//     \"mobileNumber\": \"9234567890\",\r\n//     \"email\": \"sophia.martinez@example.com\",\r\n//     \"password\": \"SafePass456!\",\r\n//     \"roles\": [\r\n//         {\r\n//             \"roleId\": 102,\r\n//             \"roleName\": \"USER\"\r\n//         }\r\n//     ],\r\n//     \"address\": {\r\n//         \"addressId\": 0,\r\n//         \"street\": \"789 Maple Lane\",\r\n//         \"buildingName\": \"Sunset Villas\",\r\n//         \"city\": \"Chicago\",\r\n//         \"state\": \"IL\",\r\n//         \"country\": \"USA\",\r\n//         \"pincode\": \"606001\"\r\n//     },\r\n//     \"cart\": {\r\n//         \"cartId\": 0,\r\n//         \"totalPrice\": 0,\r\n//         \"products\": []\r\n//     }\r\n// }\r\n\r\n// {\r\n//     \"userId\": 0,\r\n//     \"firstName\": \"Alexander\",\r\n//     \"lastName\": \"Brown\",\r\n//     \"mobileNumber\": \"9345678901\",\r\n//     \"email\": \"alexander.brown@example.com\",\r\n//     \"password\": \"StrongPwd789!\",\r\n//     \"roles\": [\r\n//         {\r\n//             \"roleId\": 102,\r\n//             \"roleName\": \"USER\"\r\n//         }\r\n//     ],\r\n//     \"address\": {\r\n//         \"addressId\": 0,\r\n//         \"street\": \"159 Birch Road\",\r\n//         \"buildingName\": \"Skyline Heights\",\r\n//         \"city\": \"Houston\",\r\n//         \"state\": \"TX\",\r\n//         \"country\": \"USA\",\r\n//         \"pincode\": \"770002\"\r\n//     },\r\n//     \"cart\": {\r\n//         \"cartId\": 0,\r\n//         \"totalPrice\": 0,\r\n//         \"products\": []\r\n//     }\r\n// }\r\n\r\n// {\r\n//     \"userId\": 0,\r\n//     \"firstName\": \"Emily\",\r\n//     \"lastName\": \"Garcia\",\r\n//     \"mobileNumber\": \"9456789012\",\r\n//     \"email\": \"emily.garcia@example.com\",\r\n//     \"password\": \"MySecurePwd!\",\r\n//     \"roles\": [\r\n//         {\r\n//             \"roleId\": 102,\r\n//             \"roleName\": \"USER\"\r\n//         }\r\n//     ],\r\n//     \"address\": {\r\n//         \"addressId\": 0,\r\n//         \"street\": \"753 Cedar Street\",\r\n//         \"buildingName\": \"Downtown Residences\",\r\n//         \"city\": \"Phoenix\",\r\n//         \"state\": \"AZ\",\r\n//         \"country\": \"USA\",\r\n//         \"pincode\": \"850003\"\r\n//     },\r\n//     \"cart\": {\r\n//         \"cartId\": 0,\r\n//         \"totalPrice\": 0,\r\n//         \"products\": []\r\n//     }\r\n// }\r\n\r\n// {\r\n//     \"userId\": 0,\r\n//     \"firstName\": \"Benjamin\",\r\n//     \"lastName\": \"Johnson\",\r\n//     \"mobileNumber\": \"9567890123\",\r\n//     \"email\": \"benjamin.johnson@example.com\",\r\n//     \"password\": \"P@ssw0rdSafe\",\r\n//     \"roles\": [\r\n//         {\r\n//             \"roleId\": 102,\r\n//             \"roleName\": \"USER\"\r\n//         }\r\n//     ],\r\n//     \"address\": {\r\n//         \"addressId\": 0,\r\n//         \"street\": \"852 Pine Avenue\",\r\n//         \"buildingName\": \"Royal Estates\",\r\n//         \"city\": \"San Diego\",\r\n//         \"state\": \"CA\",\r\n//         \"country\": \"USA\",\r\n//         \"pincode\": \"921004\"\r\n//     },\r\n//     \"cart\": {\r\n//         \"cartId\": 0,\r\n//         \"totalPrice\": 0,\r\n//         \"products\": []\r\n//     }\r\n// }\r\n\r\n// {\r\n//     \"userId\": 0,\r\n//     \"firstName\": \"Olivia\",\r\n//     \"lastName\": \"Lopez\",\r\n//     \"mobileNumber\": \"9678901234\",\r\n//     \"email\": \"olivia.lopez@example.com\",\r\n//     \"password\": \"L0p3zSecure!\",\r\n//     \"roles\": [\r\n//         {\r\n//             \"roleId\": 102,\r\n//             \"roleName\": \"USER\"\r\n//         }\r\n//     ],\r\n//     \"address\": {\r\n//         \"addressId\": 0,\r\n//         \"street\": \"963 Redwood Blvd\",\r\n//         \"buildingName\": \"Horizon Towers\",\r\n//         \"city\": \"Dallas\",\r\n//         \"state\": \"TX\",\r\n//         \"country\": \"USA\",\r\n//         \"pincode\": \"752005\"\r\n//     },\r\n//     \"cart\": {\r\n//         \"cartId\": 0,\r\n//         \"totalPrice\": 0,\r\n//         \"products\": []\r\n//     }\r\n// }\r\n\r\n// {\r\n//     \"userId\": 0,\r\n//     \"firstName\": \"Daniel\",\r\n//     \"lastName\": \"Harris\",\r\n//     \"mobileNumber\": \"9789012345\",\r\n//     \"email\": \"daniel.harris@example.com\",\r\n//     \"password\": \"D@nielH456!\",\r\n//     \"roles\": [\r\n//         {\r\n//             \"roleId\": 102,\r\n//             \"roleName\": \"USER\"\r\n//         }\r\n//     ],\r\n//     \"address\": {\r\n//         \"addressId\": 0,\r\n//         \"street\": \"147 Spruce Drive\",\r\n//         \"buildingName\": \"Summit Apartments\",\r\n//         \"city\": \"San Antonio\",\r\n//         \"state\": \"TX\",\r\n//         \"country\": \"USA\",\r\n//         \"pincode\": \"782006\"\r\n//     },\r\n//     \"cart\": {\r\n//         \"cartId\": 0,\r\n//         \"totalPrice\": 0,\r\n//         \"products\": []\r\n//     }\r\n// }\r\n\r\n// {\r\n//     \"userId\": 0,\r\n//     \"firstName\": \"Isabella\",\r\n//     \"lastName\": \"White\",\r\n//     \"mobileNumber\": \"9890123456\",\r\n//     \"email\": \"isabella.white@example.com\",\r\n//     \"password\": \"IsaBella987!\",\r\n//     \"roles\": [\r\n//         {\r\n//             \"roleId\": 102,\r\n//             \"roleName\": \"USER\"\r\n//         }\r\n//     ],\r\n//     \"address\": {\r\n//         \"addressId\": 0,\r\n//         \"street\": \"369 Palm Lane\",\r\n//         \"buildingName\": \"Ocean View\",\r\n//         \"city\": \"San Francisco\",\r\n//         \"state\": \"CA\",\r\n//         \"country\": \"USA\",\r\n//         \"pincode\": \"941007\"\r\n//     },\r\n//     \"cart\": {\r\n//         \"cartId\": 0,\r\n//         \"totalPrice\": 0,\r\n//         \"products\": []\r\n//     }\r\n// }\r\n\r\n// {\r\n//     \"userId\": 0,\r\n//     \"firstName\": \"James\",\r\n//     \"lastName\": \"Clark\",\r\n//     \"mobileNumber\": \"9901234567\",\r\n//     \"email\": \"james.clark@example.com\",\r\n//     \"password\": \"JamesPass321!\",\r\n//     \"roles\": [\r\n//         {\r\n//             \"roleId\": 102,\r\n//             \"roleName\": \"USER\"\r\n//         }\r\n//     ],\r\n//     \"address\": {\r\n//         \"addressId\": 0,\r\n//         \"street\": \"951 Cherry Road\",\r\n//         \"buildingName\": \"Grand Residences\",\r\n//         \"city\": \"Seattle\",\r\n//         \"state\": \"WA\",\r\n//         \"country\": \"USA\",\r\n//         \"pincode\": \"981008\"\r\n//     },\r\n//     \"cart\": {\r\n//         \"cartId\": 0,\r\n//         \"totalPrice\": 0,\r\n//         \"products\": []\r\n//     }\r\n// }\r\n\r\n// {\r\n//     \"userId\": 0,\r\n//     \"firstName\": \"Charlotte\",\r\n//     \"lastName\": \"Halls\",\r\n//     \"mobileNumber\": \"9012345678\",\r\n//     \"email\": \"charlotte.hall@example.com\",\r\n//     \"password\": \"CharH@ll876!\",\r\n//     \"roles\": [\r\n//         {\r\n//             \"roleId\": 102,\r\n//             \"roleName\": \"USER\"\r\n//         }\r\n//     ],\r\n//     \"address\": {\r\n//         \"addressId\": 0,\r\n//         \"street\": \"258 Willow Way\",\r\n//         \"buildingName\": \"Parkside Villas\",\r\n//         \"city\": \"Denver\",\r\n//         \"state\": \"CO\",\r\n//         \"country\": \"USA\",\r\n//         \"pincode\": \"802009\"\r\n//     },\r\n//     \"cart\": {\r\n//         \"cartId\": 0,\r\n//         \"totalPrice\": 0,\r\n//         \"products\": []\r\n//     }\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.environment.set(\"jwt_token\", jsonData[\"jwt-token\"]);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"email\": \"jonathan.williams@example.com\",\r\n//     \"password\": \"SecurePass123!\"\r\n// }\r\n\r\n{\r\n    \"email\": \"michael.anderson@example.com\",\r\n    \"password\": \"Pass123!@#\"\r\n}\r\n\r\n// {\r\n//     \"email\": \"sophia.martinez@example.com\",\r\n//     \"password\": \"SafePass456!\"\r\n// }\r\n\r\n// {\r\n//     \"email\": \"alexander.brown@example.com\",\r\n//     \"password\": \"StrongPwd789!\"\r\n// }\r\n\r\n// {\r\n//     \"email\": \"emily.garcia@example.com\",\r\n//     \"password\": \"MySecurePwd!\"\r\n// }\r\n\r\n// {\r\n//     \"email\": \"benjamin.johnson@example.com\",\r\n//     \"password\": \"P@ssw0rdSafe\"\r\n// }\r\n\r\n// {\r\n//     \"email\": \"olivia.lopez@example.com\",\r\n//     \"password\": \"L0p3zSecure!\"\r\n// }\r\n\r\n// {\r\n//     \"email\": \"daniel.harris@example.com\",\r\n//     \"password\": \"D@nielH456!\"\r\n// }\r\n\r\n// {\r\n//     \"email\": \"isabella.white@example.com\",\r\n//     \"password\": \"IsaBella987!\"\r\n// }\r\n\r\n// {\r\n//     \"email\": \"james.clark@example.com\",\r\n//     \"password\": \"JamesPass321!\"\r\n// }\r\n\r\n// {\r\n//     \"email\": \"charlotte.hall@example.com\",\r\n//     \"password\": \"CharH@ll876!\"\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -21,7 +21,6 @@ import lombok.NoArgsConstructor;
 public class Payment {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long paymentId;
 
 	@OneToOne(mappedBy = "payment", cascade = { CascadeType.PERSIST, CascadeType.MERGE })

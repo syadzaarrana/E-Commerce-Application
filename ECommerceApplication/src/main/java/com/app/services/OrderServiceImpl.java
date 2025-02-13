@@ -13,14 +13,16 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import com.app.config.AppConstants;
+import com.app.entites.Address;
 import com.app.entites.Cart;
 import com.app.entites.CartItem;
 import com.app.entites.Order;
 import com.app.entites.OrderItem;
-import com.app.entites.Payment;
 import com.app.entites.Product;
 import com.app.exceptions.APIException;
 import com.app.exceptions.ResourceNotFoundException;
+import com.app.payloads.CreateAddressDTO;
 import com.app.payloads.OrderDTO;
 import com.app.payloads.OrderItemDTO;
 import com.app.payloads.OrderResponse;
@@ -62,10 +64,13 @@ public class OrderServiceImpl implements OrderService {
 	public CartService cartService;
 
 	@Autowired
+	public AddressService addressService;
+
+	@Autowired
 	public ModelMapper modelMapper;
 
 	@Override
-	public OrderDTO placeOrder(String email, Long cartId, String paymentMethod) {
+	public OrderDTO placeOrder(String email, Long cartId, CreateAddressDTO addressDTO) {
 
 		Cart cart = cartRepo.findCartByEmailAndCartId(email, cartId);
 
@@ -81,13 +86,10 @@ public class OrderServiceImpl implements OrderService {
 		order.setTotalAmount(cart.getTotalPrice());
 		order.setOrderStatus("Order Accepted !");
 
-		Payment payment = new Payment();
-		payment.setOrder(order);
-		payment.setPaymentMethod(paymentMethod);
+		order.setPayment(paymentRepo.findById(AppConstants.PAYMENT_COD_ID).orElse(null));
 
-		payment = paymentRepo.save(payment);
-
-		order.setPayment(payment);
+		Address address = addressService.findOrCreateAddress(addressDTO);
+		order.setAddress(address);
 
 		Order savedOrder = orderRepo.save(order);
 
@@ -126,6 +128,8 @@ public class OrderServiceImpl implements OrderService {
 		OrderDTO orderDTO = modelMapper.map(savedOrder, OrderDTO.class);
 		
 		orderItems.forEach(item -> orderDTO.getOrderItems().add(modelMapper.map(item, OrderItemDTO.class)));
+
+		orderDTO.setAddress(addressService.getAddress(address.getAddressId()));
 
 		return orderDTO;
 	}
